@@ -1,0 +1,210 @@
+:root {
+    --lighter: #f1f1f1;
+    --light: #c1c1c1;
+    --medium: #818181;
+    --medium-dark: #616161;
+    --dark: #515151;
+    --darker: #111111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+main {
+    height: 100vh;
+    width: 100vw;
+}
+
+.slide-container {
+    margin: 0 auto;
+    padding: 0;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    border: 10px solid var(--light);
+    background-color: var(--light);
+    position: relative;
+    overflow: hidden;
+}
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    animation: pass 0.3s ease-out;
+}
+.slide-before {
+    --slide-deslocation: -20vw;
+}
+.slide-after {
+    --slide-deslocation: 20vw;
+}
+.content {
+    background-color: var(--lighter);
+    width: calc(100% - 80px);
+    height: calc(100% - 80px);
+    border: 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    overflow: auto;
+}
+
+
+.content > .slide-title {
+    margin-bottom: 12vh;
+}
+.content > h1 {
+    font-size: 60px;
+    color: var(--darker);
+    margin-bottom: 20px;
+}
+.content > h2 {
+    font-size: 40px;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+.content > h3 {
+    font-size: 30px;
+    color: var(--medium);
+    margin-bottom: 20px;
+}
+.slide-footer {
+    font-size: 20px;
+    color: var(--dark);
+    text-align: start;
+    margin-top: 9vh;
+}
+
+
+
+.arrows {
+    position: absolute;
+    top: 0;
+    padding: 40vh 0;
+    opacity: 0.3;
+    font-size: 60px;
+    color: var(--medium-dark);
+}
+#prevArrow {
+    left: 10px;
+    --arrow-deslocation: -2px;
+}
+#nextArrow {
+    right: 10px;
+    --arrow-deslocation: 2px;
+}
+.arrows:hover {
+    opacity: 1;
+    cursor: pointer;
+    text-shadow: var(--arrow-deslocation) 2px 5px var(--medium-dark);
+}
+
+
+
+#slide3 > .content > h3 {
+    margin: 20px 0 0 0;
+}
+.feedback-balls {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 20vh;
+    align-items: flex-end;
+}
+.feedback-balls > p {
+    font-size: 50px;
+    color: var(--light);
+    padding: 10px;
+}
+.feedback-color:hover {
+    color: var(--dark);
+}
+.feedback-size:hover {
+    font-size: 68px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.feedback-opacity:hover {
+    opacity: 0.2;
+}
+.feedback-movement:hover {
+    animation: feedback 1s;
+}
+.feedback-format:hover {
+    border: 3.5px solid var(--light);
+    color: transparent;
+    padding: 0;
+    padding-left: 5px;
+    margin: 0  10px 20px 14px;
+    height: 40px;
+    font-size: 35px;
+}
+
+
+.boxing {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+.boxing * {
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 33%;
+}
+.boxing > p {
+    font-size: 2.5vh;
+    text-align: justify;
+    margin: 0;
+    max-height: 310px;
+    overflow-y: auto;
+}
+
+
+
+@keyframes pass{
+    from {
+        transform: translateX(var(--slide-deslocation));
+        opacity: 0.5;
+    }
+    to {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+@keyframes feedback {
+    from {
+        padding-bottom: 10px;
+    }
+    to {
+        padding-bottom: 40px
+    }
+}
+@media only screen and (max-width: 850px) {
+    .content > h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .content > h2 {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+    
+    .content > h3 {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+    
+    .content > .slide-footer {
+        font-size: 15px;
+        margin-top: 6vh;
+    }
+}
