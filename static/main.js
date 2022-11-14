@@ -25,6 +25,10 @@ function initializeSlides() {
     slides[slide_number].style.display = 'block';
     slides[slide_number + 1].setAttribute('class', 'slide slide-after');
     slides[slides.length -1].setAttribute('class', 'slide slide-after');
+    let boxfeed = document.getElementsByClassName('img-boxfeed');
+    boxfeed[0].style.backgroundImage = "url('import/imgs/corgi.jpg')";
+    boxfeed[1].style.backgroundImage = "url('import/imgs/shiba-2.jpg')";
+    boxfeed[2].style.backgroundImage = "url('import/imgs/golden.jpg')";
 }
 
 initializeSlides();

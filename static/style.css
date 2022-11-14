@@ -168,6 +168,27 @@ main {
 }
 
 
+.img-boxfeed {    
+    width: 200px;
+    height: 310px;
+    background-position: center;
+    background-size: cover;
+}
+.img-boxfeed:hover {
+    background-size: 350%;
+    filter: grayscale();
+}
+#corgiImg {
+    background-position: 30%;
+}
+#goldenImg {
+    background-position: 10% 10%;
+}
+#goldenImg:hover {
+    background-position: 68% 10%;
+    background-size: 200%;
+}
+
 
 @keyframes pass{
     from {
